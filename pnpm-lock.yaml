@@ -3,7 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^16.2.1
   '@micra/commit-lint-config': next
+  '@micra/core': 0.1.0-next.19
+  '@micra/error': 0.1.0-next.8
   '@micra/eslint-config': next
+  '@micra/event-emitter': 0.1.0-next.3
+  '@micra/request-handler': 0.1.0-next.6
+  '@micra/router': 0.1.0-next.9
   '@micra/typescript-config': next
   '@micra/vite-config': next
   '@types/node': ^17.0.21
@@ -11,6 +16,7 @@ specifiers:
   concurrently: ^7.0.0
   eslint: ^8.11.0
   eslint-plugin-prettier: ^4.0.0
+  history: ^5.3.0
   husky: ^7.0.4
   lint-staged: ^12.3.6
   nodemon: ^2.0.15
@@ -20,12 +26,20 @@ specifiers:
   vite: ^2.8.6
   vitest: ^0.6.1
 
+dependencies:
+  '@micra/core': 0.1.0-next.19
+  '@micra/error': 0.1.0-next.8
+  '@micra/event-emitter': 0.1.0-next.3
+  '@micra/request-handler': 0.1.0-next.6
+  '@micra/router': 0.1.0-next.9
+  history: 5.3.0
+
 devDependencies:
   '@commitlint/cli': 16.2.1
   '@micra/commit-lint-config': 0.1.0-next.1_@commitlint+cli@16.2.1
   '@micra/eslint-config': 0.1.0-next.1_qo6aclrcuraztg6h4usgnbrzbe
   '@micra/typescript-config': 0.1.0-next.1
-  '@micra/vite-config': 0.1.0-next.4_iggmyam2welnlf75gonjlwkwxq
+  '@micra/vite-config': 0.1.0-next.5_iggmyam2welnlf75gonjlwkwxq
   '@types/node': 17.0.21
   c8: 7.11.0
   concurrently: 7.0.0
@@ -62,6 +76,13 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
+
+  /@babel/runtime/7.18.9:
+    resolution: {integrity: sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.9
+    dev: false
 
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
@@ -284,6 +305,14 @@ packages:
       '@commitlint/config-conventional': 16.2.1
     dev: true
 
+  /@micra/core/0.1.0-next.19:
+    resolution: {integrity: sha512-s/zpLeiMKfePR2CAmMPgOk3IlOlyUSjlK6yMxXfb804aRAgiZbrzjUWfwpunyg8UX/51EJ6RDF12mSQLCUq2WQ==}
+    dev: false
+
+  /@micra/error/0.1.0-next.8:
+    resolution: {integrity: sha512-iHeX+IhFlNuWcczXfeAJEYoVWG6cTARETB7+WNiDJIlWojLNnXUwmSK/Low7XaMzyNeEZdXE7AJtdMHZ9Ry8rQ==}
+    dev: false
+
   /@micra/eslint-config/0.1.0-next.1_qo6aclrcuraztg6h4usgnbrzbe:
     resolution: {integrity: sha512-BGmzOMBfm4GduC3Ppy6chl7v0q4uB3I97/BmRq3hEiXrV6DoX9ndFx8akzlw4ISkQ3qRURATcg4CO3LAFMzhJw==}
     peerDependencies:
@@ -301,12 +330,31 @@ packages:
       - supports-color
     dev: true
 
+  /@micra/event-emitter/0.1.0-next.3:
+    resolution: {integrity: sha512-mEOKI5+0bMYylNqkM7jjoLz3TtOEygeRUB86gpqoL9rq92jXC+5RXawZ8vSgajFwQlfyEd+xQkAcS7RZnRl2NA==}
+    dev: false
+
+  /@micra/request-handler/0.1.0-next.6:
+    resolution: {integrity: sha512-M2kjbWU9ytREpKl8f0FXUId2fS41H1lbDxQ2BmXwfHFEPRUEp+MUSvPtQmLLe405XMCZcCWiLpLoI1hCz3KE6A==}
+    dependencies:
+      '@micra/core': 0.1.0-next.19
+      '@micra/error': 0.1.0-next.8
+    dev: false
+
+  /@micra/router/0.1.0-next.9:
+    resolution: {integrity: sha512-t7XHHYaUmyhZs9rUYq4GiI7tJDV0ats8+iZX3eXKzXs0KWLZaORjWl2/+cGnRZLMoCVPdyxFNYceCwcXFZ+TUw==}
+    dependencies:
+      '@micra/error': 0.1.0-next.8
+      '@micra/request-handler': 0.1.0-next.6
+      path-to-regexp: 6.2.1
+    dev: false
+
   /@micra/typescript-config/0.1.0-next.1:
     resolution: {integrity: sha512-lM/ODpxkl8aQkGZI846QyG4Hsp0a4meuWH8Vj24ixJ2Q8T5DfIJ3BTHv4N50/qYXdrtbQvCgyda9/LYimXcynQ==}
     dev: true
 
-  /@micra/vite-config/0.1.0-next.4_iggmyam2welnlf75gonjlwkwxq:
-    resolution: {integrity: sha512-+h330gJEzagSC9zkTcyclToqm8SI5opqDN05ItQo9rQN/s5kKjyA/GeVPemwB+iFyQp11t5wekbol3SlcMMcXA==}
+  /@micra/vite-config/0.1.0-next.5_iggmyam2welnlf75gonjlwkwxq:
+    resolution: {integrity: sha512-jfGdpURsgDxoFfvNaSG2Hr0avZSFMTx/P+y3RwUR3BaIrmryL6HI36K50nueojFj23Kjbqs25+0iERAbUdwqOg==}
     peerDependencies:
       c8: '>= 7'
       vite: '>= 2'
@@ -645,7 +693,7 @@ packages:
     dev: true
 
   /array-ify/1.0.0:
-    resolution: {integrity: sha1-nlKHYrSpBmrRY6aWKjZEGOlibs4=}
+    resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
     dev: true
 
   /array-union/2.1.0:
@@ -1801,6 +1849,12 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /history/5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
+    dependencies:
+      '@babel/runtime': 7.18.9
+    dev: false
+
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
@@ -2474,6 +2528,10 @@ packages:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: true
 
+  /path-to-regexp/6.2.1:
+    resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==}
+    dev: false
+
   /path-type/4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
@@ -2554,7 +2612,7 @@ packages:
     dev: true
 
   /q/1.5.1:
-    resolution: {integrity: sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=}
+    resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     dev: true
 
@@ -2619,6 +2677,10 @@ packages:
       indent-string: 4.0.0
       strip-indent: 3.0.0
     dev: true
+
+  /regenerator-runtime/0.13.9:
+    resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+    dev: false
 
   /regexpp/3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}

@@ -11,6 +11,24 @@
   "bugs": {
     "url": "https://github.com/micrajs/community/issues?q=is:issue+is:open+label:%22Project:+spa-router%22+label:%22Type:+fix%22"
   },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./*": "./*",
+    "./ServiceProvider.server": {
+      "import": "./ServiceProvider.server.mjs",
+      "require": "./ServiceProvider.server.js",
+      "types": "./ServiceProvider.server.d.ts"
+    },
+    "./ServiceProvider.web": {
+      "import": "./ServiceProvider.web.mjs",
+      "require": "./ServiceProvider.web.js",
+      "types": "./ServiceProvider.web.d.ts"
+    }
+  },
   "scripts": {
     "build:code": "vite build --config .viterc.ts",
     "build:types": "tsc -p tsconfig.json && tsc-alias --silent -p tsconfig.json --dir .",
@@ -44,5 +62,13 @@
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "vitest": "^0.6.1"
+  },
+  "dependencies": {
+    "@micra/core": "0.1.0-next.19",
+    "@micra/error": "0.1.0-next.8",
+    "@micra/event-emitter": "0.1.0-next.3",
+    "@micra/request-handler": "0.1.0-next.6",
+    "@micra/router": "0.1.0-next.9",
+    "history": "^5.3.0"
   }
 }
